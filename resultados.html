@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados</title>
+    <link rel="stylesheet" href="CSS/style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://rawgit.com/eKoopmans/html2pdf.js/master/dist/html2pdf.bundle.js"></script>
+
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js';
+        import { getDatabase, ref, get } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js';
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBYflm70mFVdioZqKdiWe1m92XCTy44Z_c",
+            authDomain: "votaciones-2024-f1e0c.firebaseapp.com",
+            databaseURL: "https://votaciones-2024-f1e0c-default-rtdb.firebaseio.com/",
+            projectId: "votaciones-2024-f1e0c",
+            storageBucket: "votaciones-2024-f1e0c.firebasestorage.app",
+            messagingSenderId: "293361877394",
+            appId: "1:293361877394:web:22f329fdcfceac4d5ac14b",
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+
+        async function obtenerResultados() {
+            const votosRef = ref(database, 'votos');
+            const snapshot = await get(votosRef);
+            const votos = snapshot.val();
+
+            if (votos) {
+                const resultados = {};
+                for (const grupo in votos) {
+                    resultados[grupo] = votos[grupo];
+                }
+                mostrarResultados(resultados);
+            } else {
+                alert('No se encontraron resultados.');
+            }
+        }
+
+        function mostrarResultados(resultados) {
+            const resultadosDiv = document.getElementById('resultados');
+            let html = '<h2>Resultados de la Votación</h2>';
+
+            html += `
+                <table id="tabla-resultados">
+                    <thead>
+                        <tr>
+                            <th>Grupo</th>
+                            <th>Imagen</th>
+                            <th>Nombre</th>
+                            <th>Votos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+            
+            for (const grupo in resultados) {
+                const grupoData = getGrupoData(grupo);
+                html += `
+                    <tr>
+                        <td>${grupo}</td>
+                        <td><img src="${grupoData.imagen}" alt="Grupo ${grupo}"></td>
+                        <td>${grupoData.nombre}</td>
+                        <td>${resultados[grupo]}</td>
+                    </tr>
+                `;
+            }
+
+            html += `
+                    </tbody>
+                </table>
+            `;
+            resultadosDiv.innerHTML = html;
+        }
+
+        function getGrupoData(grupo) {
+            const grupos = {
+                1: { nombre: "Nombre del Grupo 1", imagen: "Recursos/img/Logo de grupos/ejemplo.png" },
+                2: { nombre: "Nombre del Grupo 2", imagen: "Recursos/img/Logo de grupos/ejemplo.png" },
+                3: { nombre: "Nombre del Grupo 3", imagen: "Recursos/img/Logo de grupos/ejemplo.png" },
+                4: { nombre: "Nombre del Grupo 4", imagen: "Recursos/img/Logo de grupos/ejemplo.png" },
+            };
+            return grupos[grupo] || { nombre: "Grupo desconocido", imagen: "Recursos/img/Logo de grupos/ejemplo.png" };
+        }
+
+        obtenerResultados();
+
+        function generarPDF() {
+            const element = document.getElementById('resultados');
+            const opt = {
+                margin:       1,
+                filename:     'resultados_votacion.pdf',
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2 },
+                jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+            };
+            html2pdf(element, opt);
+        }
+
+        document.getElementById('descargar-pdf-btn').addEventListener('click', generarPDF);
+    </script>
+</head>
+<body>
+    <header>
+        <h1>
+            <img src="Recursos/img/Escudo.png" alt="Escudo" class="escudo-img"> 
+            Elecciones Municipales Escolares
+        </h1>
+    </header>
+    <main>
+        <div id="resultados"></div>
+        <button id="descargar-pdf-btn">Descargar PDF</button>
+    </main>
+    <footer>
+        <nav>
+            <ul>
+                <li>
+                    <img src="Recursos/img/Escudo.png" alt="Escudo" class="escudo-img2">
+                    <a href="https://sites.google.com/iecasagrande.edu.pe/iecasagrande/docentes?authuser=0">
+                        I.E CASA GRANDE
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>

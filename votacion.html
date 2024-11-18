@@ -1,0 +1,72 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votaciones</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <script type="module" src="Scripts/scripts_votaciones.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>
+            <img src="Recursos/img/Escudo.png" alt="Escudo" class="escudo-img"> 
+            Elecciones Municipales Escolares
+        </h1>
+    </header>
+    <main>
+        <div class="grupos-contenedor">
+            <div class="grupo">
+                <img src="Recursos/img/Logo de grupos/ejemplo.png" alt="Grupo 1" class="grupo-imagen">
+                <h1>Lista No: 1</h1>
+                <p>"Grupo 1"</p>
+                <button data-grupo="Grupo 1">Votar</button>
+            </div>
+            <div class="grupo">
+                <img src="Recursos/img/Logo de grupos/ejemplo.png" alt="Grupo 2" class="grupo-imagen">
+                <h1>Lista No: 2</h1>
+                <p>"Nombre del grupo"</p>
+                <button data-grupo="Grupo 2">Votar</button>
+            </div>
+            <div class="grupo">
+                <img src="Recursos/img/Logo de grupos/ejemplo.png" alt="Grupo 3" class="grupo-imagen">
+                <h1>Lista No: 3</h1>
+                <p>"Nombre del grupo"</p>
+                <button data-grupo="Grupo 3">Votar</button>
+            </div>
+            <div class="grupo">
+                <img src="Recursos/img/Logo de grupos/ejemplo.png" alt="Grupo 4" class="grupo-imagen">
+                <h1>Lista No: 4</h1>
+                <p>"Nombre del grupo"</p>
+                <button data-grupo="Grupo 4">Votar</button>
+            </div>
+        </div>        
+    </main>
+    <footer>
+        <nav>
+            <ul>
+                <li>
+                    <img src="Recursos/img/Escudo.png" alt="Escudo" class="escudo-img2">
+                    <a href="https://sites.google.com/iecasagrande.edu.pe/iecasagrande/docentes?authuser=0">
+                        I.E CASA GRANDE
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
+    <div id="confirmar-voto-modal" class="modal">
+        <div class="modal-content">
+            <img id="imagen-modal" src="" alt="Imagen del grupo" style="width: 200px; height: 200px;">
+            <p>¿Confirmas tu voto?</p>
+            <button id="confirmar-voto-btn">Confirmar votación</button>
+        </div>
+    </div>
+    <div id="agradecimiento-modal" class="modal">
+        <div class="modal-content">
+            <img id="imagen-agradecimiento" src="" alt="Imagen del grupo" style="width: 200px; height: 200px;">
+            <p>¡Gracias por tu apoyo!</p>
+            <button id="volver-inicio-btn">Volver al inicio</button>
+        </div>
+    </div>
+</body>
+</html>
