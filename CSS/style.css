@@ -1,0 +1,394 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(131, 209, 255);
+    color: #333;
+    margin: 0;
+}
+
+.index-page {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url('/Recursos/img/fondo.png');
+    background-repeat: no-repeat;
+    color: #333;
+    margin: 0;
+}
+
+header {
+    background-color: #185bba;
+    color: #ecf0f1;
+    padding: 10px;
+    text-align: left;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.escudo-img {
+    width: 30px;
+    padding: 5px;
+    vertical-align: middle;
+}
+
+.escudo-img2 {
+    width: 15px;
+    padding: 10px;
+    vertical-align: middle;
+}
+
+main {
+    padding: 20px;
+    font-size: 2em;
+    margin-top: 0;
+    text-align: center;
+}
+
+main h2 {
+    color: #185bba;
+    font-size: 2em;
+    margin-top: 0;
+}
+
+main p {
+    font-size: 1.2em;
+}
+
+footer {
+    background-color: transparent;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 4px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #249ae8;
+    text-decoration: none;
+    font-size: 0.8em;
+}
+
+nav ul li a:hover {
+    color: #208ad1;
+}
+
+nav ul li c {
+    color: #249ae8;
+    text-decoration: none;
+    font-size: 0.8em;
+}
+
+nav ul li c:hover {
+    color: #208ad1;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    color: #0893de;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input {
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ecf0f1;
+    border-radius: 4px;
+    width: 70%;
+}
+
+input[type="submit"] {
+    background-color: #249ae8;
+    color: #ecf0f1;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #208ad1;
+}
+
+.card-container {
+    display: grid;
+    justify-content: end;
+    max-width: 95%;
+    margin: 0 auto 50px;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    padding: 15px;
+}
+
+.card h1 {
+    padding: 15px;
+    color: #2467c5;
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.grupos-contenedor {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-content: center;
+    max-width: 95%;
+    margin: 0 auto 50px;
+    margin-bottom: 20px;
+}
+
+.grupo {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    padding: 15px;
+}
+
+.grupo h1 {
+    text-align: left;
+    font-size: 0.5em;
+}
+
+.grupo p {
+    text-align: left;
+    font-size: 0.5em;
+}
+
+.grupo button {
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ecf0f1;
+    border-radius: 4px;
+    width: 35%;
+}
+
+.grupo button {
+    background-color: #249ae8;
+    color: #ecf0f1;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.grupo button:hover {
+    background-color: #208ad1;
+}
+
+.grupo img {
+    width: 150px;
+    padding: 10px;
+    border-radius: 25px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #249ae8;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #208ad1;
+}
+
+table {
+    width: 75%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    background-color: transparent;
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #208ad1;
+    background-color: #ffffff;
+    color: #208ad1;
+}
+
+td img {
+    max-width: 100%;
+    max-height: 80px;
+    height: auto;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+#descargar-pdf-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #249ae8;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#descargar-pdf-btn:hover {
+    background-color: #208ad1;
+}
+
+
+header {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+footer nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+footer nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+footer nav ul li a:hover {
+    color: #ffffff;
+}
+
+footer nav ul li img.escudo-img2 {
+    width: 30px;
+    vertical-align: middle;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 300px;
+}
+
+.popup-content h2 {
+    color: #185bba;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.popup-content label {
+    display: block;
+    color: #0893de;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.popup-content input {
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ecf0f1;
+    border-radius: 4px;
+    width: 80%;
+    font-size: 1em;
+}
+
+.popup-content input[type="submit"] {
+    background-color: #249ae8;
+    color: #ecf0f1;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.popup-content input[type="submit"]:hover {
+    background-color: #208ad1;
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #185bba;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.popup-content input[type="submit"] {
+    margin-top: 15px;
+    width: 100%;
+    font-size: 1.2em;
+    padding: 12px;
+}
+
